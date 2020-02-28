@@ -1,6 +1,18 @@
-document.addEventListener('keyup', (e) => {
+const ballElm = document.querySelector('.ball');
 
-    const ballElm = document.querySelector('.ball');
+const movePlayer = setInterval(() => {
+    const x = ballElm.getBoundingClientRect().left;
+    const y = ballElm.getBoundingClientRect().top;
+
+    ballElm.style.left = x < 495 ? x + 5 + 'px' : 495;
+
+    if (x > 480) {
+        ballElm.style.left = '480px';
+        clearInterval(movePlayer);
+    }
+}, 100);
+
+document.addEventListener('keyup', (e) => {
     const x = ballElm.getBoundingClientRect().left;
     const y = ballElm.getBoundingClientRect().top;
     
