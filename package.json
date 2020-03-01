@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node-sass style.scss -o . && http-server"
+    "start": "tsc scriptT.ts && browserify --debug scriptT.js -o script.js && http-server"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,14 @@
   },
   "homepage": "https://github.com/jiddisch/snake#readme",
   "dependencies": {
-    "node-sass": "^4.13.1"
+    "@types/node": "^13.7.7",
+    "babelify": "^10.0.0",
+    "node-sass": "^4.13.1",
+    "rxjs": "^6.5.4"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.8.3",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3"
   }
 }
